@@ -9,7 +9,7 @@ const About = () => {
                 <img className="img-fluid rounded mb-4 mb-lg-0" src={"/img/laxon_arts_logo.jpg"} alt="" />
             </Col>
             <Col lg="5">
-                <h1 className="font-weight-light">About Me</h1>
+                <h1 className="font-weight-light">About US</h1>
                 <p>We are a team of passionate programmers, graphic designers, and a business professionals with over 10 years of experience.<p>Laxon Arts founded to provide top quality, yet affordable solution to both large corporation and SMEs alike.</p>  </p>
                 <div class="btn-group-vertical">
                 <button type="button" class="btn btn-primary">HTML5</button>
