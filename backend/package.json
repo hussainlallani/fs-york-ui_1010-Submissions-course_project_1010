@@ -1,0 +1,41 @@
+{
+  "name": "course-project",
+  "version": "1.0.0",
+  "description": "For this project you must work alone to build a backend application consisting of a RESTful JSON API for a contact us form [_(examples)_](https://www.jotform.com/form-templates/category/contact-form) you'll be building out in a later class. All persistent data is to be stored in a simple JSON file that’s operated on through Node’s `fs` module.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node -r esm index.js",
+    "dev": "nodemon -r esm index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/hussainlallani/course-project.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "project"
+  ],
+  "author": "Hussain Lallani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/hussainlallani/course-project/issues"
+  },
+  "homepage": "https://gitlab.com/hussainlallani/course-project#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
+    "util": "^0.12.3",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
