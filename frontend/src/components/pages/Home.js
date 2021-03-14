@@ -19,7 +19,9 @@ const Home = () => {
                             <li>Experienced web experts team to make your project successful</li>
                         </ul>
                     </p>
-                    <Button color="primary">Get 30-Min FREE Consultation!</Button>
+                    <a href="/contact">
+                         <Button color="primary">Get 30-Min FREE Consultation!</Button>
+                    </a>
                 </Col>
             </Row>
             <Card className="text-white bg-secondary my-5 py-4 text-center cta-line">
@@ -35,7 +37,9 @@ const Home = () => {
                             <CardBody>We build dynamic CMS enabled websites that empower you and your business.</CardBody>
                         </CardBody>
                         <CardFooter>
+                        <a href="/contact">
                             <Button color="primary" size="sm">Consult With Our Experts!</Button>
+                        </a>
                         </CardFooter>
                     </Card>
                 </Col>
@@ -46,7 +50,9 @@ const Home = () => {
                             <CardBody>We build a solid eCommerce portal that contains all essential features to simplify the online ordering process.</CardBody>
                         </CardBody>
                         <CardFooter>
+                        <a href="/contact">
                             <Button color="primary" size="sm">Consult With Our Experts!</Button>
+                        </a>
                         </CardFooter>
                     </Card>
                 </Col>
@@ -57,7 +63,9 @@ const Home = () => {
                             <CardBody> We help your business grow with a one-stop web app solution by creating user-centric designs.</CardBody>
                         </CardBody>
                         <CardFooter>
+                        <a href="/contact">
                             <Button color="primary" size="sm">Consult With Our Experts!</Button>
+                        </a>
                         </CardFooter>
                     </Card>
                 </Col>
