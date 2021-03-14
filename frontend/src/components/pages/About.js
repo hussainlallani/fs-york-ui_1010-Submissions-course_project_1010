@@ -10,7 +10,7 @@ const About = () => {
             </Col>
             <Col lg="5">
                 <h1 className="font-weight-light">About Me</h1>
-                <p>I have passionate programmer, graphic designer, and a business professional with over 6 years of experience in Marketing.<p>I have founded Laxon Arts to provide top quality, yet affordable solution to both large corporation and SMEs alike.</p>  </p>
+                <p>We are a team of passionate programmers, graphic designers, and a business professionals with over 10 years of experience.<p>Laxon Arts founded to provide top quality, yet affordable solution to both large corporation and SMEs alike.</p>  </p>
                 <div class="btn-group-vertical">
                 <button type="button" class="btn btn-primary">HTML5</button>
                 <button type="button" class="btn btn-primary">CSS</button>
