@@ -22,10 +22,11 @@ const Contact = () => {
         })
         const payload = await response.json()
         if (response.status >= 400) {
-            // alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
+            alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
         } else {
             alert(`Congrats! Submission submitted with id: ${payload.id}`)
         }
+        
     }
 
     return (
@@ -39,7 +40,7 @@ const Contact = () => {
                 <FormGroup row>
                     <Label for="emailEntry" sm={2}>Email</Label>
                     <Col sm={10}>
-                    <Input type="email" name="email" id="emailEntry" placeholder="Enter email to contact"  required value={email} onChange={e => setEmail(e.target.value) }/>
+                    <Input autoFocus type="email" name="email" id="emailEntry" placeholder="Enter email to contact"  required value={email} onChange={e => setEmail(e.target.value) }/>
                     </Col>
                 </FormGroup>
                 <FormGroup row>

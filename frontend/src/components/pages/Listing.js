@@ -16,7 +16,7 @@ const Listings = () => {
     }
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch('http://localhost:4000/contact_form/entries', {
+            const response = await fetch('http://localhost:9000/contact_form/entries', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -32,7 +32,7 @@ const Listings = () => {
             <Row>
                 <h1>Listings for user: {user}</h1>
             </Row>
-            <Table responsive>
+            <Table responsive className="text-white">
                 <thead>
                     <tr>
                     <th>ID</th>
@@ -43,7 +43,7 @@ const Listings = () => {
                 </thead>
                 <tbody>
                     {listing.length === 0 &&
-                        <tr><td colSpan="4" className="text-center"><i>No listings found</i></td></tr>
+                        <tr><td colSpan="4" className="text-center text-white"><i>No listings found</i></td></tr>
                     }
                     {listing.length > 0 &&
                         listing.map(entry => <tr><td>{entry.id}</td><td>{entry.name}</td><td>{entry.phoneNumber}</td><td>{entry.email}</td></tr>)

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Container, Col, Row, Button, Form, FormGroup, Label, Input, Card, CardBody, CardText } from 'reactstrap'
-import { useHistory, useLocation } from 'react-router-dom'
+// import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+
 
 const Login = () => {
     let history = useHistory();
-    let location = useLocation();
+    // let location = useLocation();
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
@@ -24,16 +26,16 @@ const Login = () => {
               body: JSON.stringify({username, password})
           });
           const payload = await response.json();
-          alert(payload.token);
           if (response.status >= 400) {
               setAuth(false);
           } else {
               console.log(payload);
               sessionStorage.setItem('token', payload.token);
-              this.props.history.push("/");
+              console.log({history});
   
-              let { from } = location.state || { from: { pathname: "/" } };
-              history.replace(from);
+              // let { from } = location.state || { from: { pathname: "/" } };
+              // history.replace(from);
+              history.push("/");
           }
         } catch(ex){
           if (ex.response && ex.response.status === 400){

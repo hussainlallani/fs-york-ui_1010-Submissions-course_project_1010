@@ -30,7 +30,7 @@ const Home = () => {
                 </CardBody>
             </Card>
             <Row>
-                <Col md="4" className="mb-5">
+                <Col md="4" className="mb-5 align-items-stretch">
                     <Card className="h-100">
                         <CardBody>
                             <CardTitle><h2>CMS Website Development</h2></CardTitle>
@@ -44,7 +44,7 @@ const Home = () => {
                     </Card>
                 </Col>
                 <Col md="4" className="mb-5">
-                    <Card>
+                    <Card className="h-100">
                         <CardBody>
                             <CardTitle><h2>eCommerce Store Development</h2></CardTitle>
                             <CardBody>We build a solid eCommerce portal that contains all essential features to simplify the online ordering process.</CardBody>
@@ -57,7 +57,7 @@ const Home = () => {
                     </Card>
                 </Col>
                 <Col md="4" className="mb-5">
-                    <Card>
+                    <Card className="h-100">
                         <CardBody>
                             <CardTitle><h2>Website Application Development</h2></CardTitle>
                             <CardBody> We help your business grow with a one-stop web app solution by creating user-centric designs.</CardBody>
