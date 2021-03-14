@@ -13,7 +13,7 @@ const Home = () => {
                 </Col>
                 <Col lg="5">
                     {/* <h1 className="font-weight-light">Laxon Arts</h1> */}
-                    <p><h2>Web Development Company</h2>
+                    <p class="text-justify"><h2>Web Development Company</h2>
                     A Full-Service Digital Agency and Web Design Firm in Canada with Excellence in Web Design & Development Services
                         <ul>
                             <li>Designing robust websites for startups to top corp.</li>
@@ -31,14 +31,14 @@ const Home = () => {
                     <CardText><p className="text-white m-0">Turn your business ideas into 'Clickable' solutions!</p></CardText>
                 </CardBody>
             </Card>
-            <Row>
+            <Row className="text-center">
                 <Col md="4" className="mb-5 align-items-stretch">
                     <Card className="h-100">
                         <CardBody>
                             <CardTitle><h2>CMS Website Development</h2></CardTitle>
                             <CardBody>We build dynamic CMS enabled websites that empower you and your business.</CardBody>
                         </CardBody>
-                        <CardFooter>
+                        <CardFooter className="text-center">
                         <a href="/contact">
                             <Button color="primary" size="sm">Consult With Our Experts!</Button>
                         </a>
@@ -51,7 +51,7 @@ const Home = () => {
                             <CardTitle><h2>eCommerce Store Development</h2></CardTitle>
                             <CardBody>We build a solid eCommerce portal that contains all essential features to simplify the online ordering process.</CardBody>
                         </CardBody>
-                        <CardFooter>
+                        <CardFooter className="text-center">
                         <a href="/contact">
                             <Button color="primary" size="sm">Consult With Our Experts!</Button>
                         </a>
@@ -64,7 +64,7 @@ const Home = () => {
                             <CardTitle><h2>Website Application Development</h2></CardTitle>
                             <CardBody> We help your business grow with a one-stop web app solution by creating user-centric designs.</CardBody>
                         </CardBody>
-                        <CardFooter>
+                        <CardFooter className="text-center"> 
                         <a href="/contact">
                             <Button color="primary" size="sm">Consult With Our Experts!</Button>
                         </a>
