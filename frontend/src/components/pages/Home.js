@@ -1,13 +1,15 @@
 import React from 'react'
 import { Container, Row, Col, Button, CardBody, CardTitle, CardText, CardFooter, Card } from 'reactstrap'
-
+import Tilt from 'react-tilt';
 
 const Home = () => {
     return(
         <Container>
             <Row className="my-5">
                 <Col lg="7">
+                <Tilt className="Tilt" options={{ max : 25 }}  >
                     <img className="img-fluid rounded mb-4 mb-lg-0" src={"/img/laxon_arts_logo.jpg"} alt="" />
+                </Tilt>
                 </Col>
                 <Col lg="5">
                     {/* <h1 className="font-weight-light">Laxon Arts</h1> */}
