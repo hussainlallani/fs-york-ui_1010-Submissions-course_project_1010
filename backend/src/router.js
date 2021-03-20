@@ -19,7 +19,7 @@ router.post("/contact_form/entries",verifyToken, userReqHandler, async (req, res
 })
 
 router.post("/users", verifyToken, userReqHandler, async (req, res) => {
-   res.status(201).json({...newUser})
+   return res.status(201).json({...newUser})
 })
 
 router.post("/auth", authHandler, async (req, res) => {

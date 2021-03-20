@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom'
 const Login = () => {
     let history = useHistory();
     // let location = useLocation();
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
 
@@ -23,7 +23,7 @@ const Login = () => {
             "Access-Control-Allow-Origin" : "*", 
             "Access-Control-Allow-Credentials" : true, 
                 },
-              body: JSON.stringify({username, password})
+              body: JSON.stringify({email, password})
           });
           const payload = await response.json();
           if (response.status >= 400) {
@@ -60,8 +60,8 @@ const Login = () => {
           <Row form>
             <Col md={6}>
               <FormGroup>
-                <Label for="usernameEntry">Username</Label>
-                <Input type="text" name="username" id="usernameEntry" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/>
+                <Label for="usernameEntry">Email</Label>
+                <Input type="text" name="email" id="emailEntry" placeholder="Username" value={email} onChange={e => setEmail(e.target.value)}/>
               </FormGroup>
             </Col>
             <Col md={6}>

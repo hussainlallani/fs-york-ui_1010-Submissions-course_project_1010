@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Container } from 'reactstrap'
 import { NavLink as RouteLink } from 'react-router-dom'
+import parseJwt from '../../helpers/authHelper'
+import { useHistory } from "react-router-dom";
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
 const Navigation = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const toggle = () => setIsOpen(!isOpen)
+    let history = useHistory();
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+    const token = sessionStorage.getItem('token');
+    const user = parseJwt(token).email;
+    const logout = event => {
+        event.preventDefault();
+       sessionStorage.removeItem('token');
+        history.push("/login");
+    }
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggleDropdown = () => setDropdownOpen(prevState => !prevState);
 
     return (
         <Navbar className="nav-color" expand="md" fixed="top">
@@ -26,6 +39,20 @@ const Navigation = () => {
                     <NavItem>
                         <NavLink tag={RouteLink} to="/submissions">Submissions</NavLink>
                     </NavItem>
+                    { `${user}`!=="undefined" && 
+                    <NavItem>
+                        <NavLink tag={RouteLink} to="/logout" > 
+                        <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                         <DropdownToggle caret>{user}</DropdownToggle>
+                            <DropdownMenu className="text-center">
+                                <button onClick={logout} className="btn">
+                                <DropdownItem>Logout</DropdownItem>
+                                </button>
+                            </DropdownMenu>
+                            </Dropdown>
+                        </NavLink>
+                    </NavItem>
+                    }
                 </Nav>
             </Collapse>
             </Container>

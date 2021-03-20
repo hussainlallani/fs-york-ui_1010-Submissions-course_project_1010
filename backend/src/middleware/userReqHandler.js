@@ -9,9 +9,9 @@ export const userReqHandler = async (req,res,next) => {
 
 let requiredFormProperties = () => {
     if (req.url === "/users"){
-        return requiredFormProperties = ['name', 'password', 'email']
+        return requiredFormProperties = ['password', 'email']
     } else if (req.url === "/contact_form/entries") {
-        return requiredFormProperties = ['name', 'email', 'phoneNumber', 'content']
+        return requiredFormProperties = ['name', 'username', 'phoneNumber', 'content']
     }
 }; 
 requiredFormProperties()
@@ -27,7 +27,7 @@ const missingProperties = (body, requiredFormProperties) => {
 }
 
 // const usersDb = JSON.parse(JSON.stringify(await db.getAllItems("users",null)))
-// const usersDbIndex = usersDb.findIndex(properties => properties.email === body.email)
+// const usersDbIndex = usersDb.findIndex(properties => properties.username === body.username)
 
 const missingPropertiesHandler = async (missingProperties,missingPropsLogger) => {
     if (missingProperties.length) { // remember length of 0, will mean false, so if there is something in the array, this will be truty
@@ -35,8 +35,8 @@ const missingPropertiesHandler = async (missingProperties,missingPropsLogger) =>
         return missingPropsLogger
     } 
     // else if(usersDbIndex !== -1){
-    //     missingPropsLogger.message="Email already exist!"
-    //     missingPropsLogger.invalid.push("email")
+    //     missingPropsLogger.message="username already exist!"
+    //     missingPropsLogger.invalid.push("username")
     //     return missingProperties
     // } else {
     //     return missingProperties
@@ -63,13 +63,13 @@ const hashPwd = async (req,res, missingProperties) => {
                 email: req.body.email,
             }
 
-            // if duplicate email exist
+            // if duplicate username exist
             const usersDb = JSON.parse(JSON.stringify(await db.getAllItems("users",newUser)))
             const usersDbIndex = usersDb.findIndex(properties => properties.email === body.email)
 
             if(usersDbIndex !== -1){
-            missingPropsLogger.message="Email already exist!"
-            missingPropsLogger.invalid.push("email")
+            missingPropsLogger.message="username already exist!"
+            missingPropsLogger.invalid.push("username")
             return res.status(400).json(missingPropsLogger)}
 
             await db.createItem("users",newUser)
@@ -81,7 +81,7 @@ const hashPwd = async (req,res, missingProperties) => {
     let newEntry = {
             id: uuidv4(),
             name: req.body.name,
-            email: req.body.email,
+            username: req.body.username,
             phoneNumber: req.body.phoneNumber,
             content: req.body.content
         }

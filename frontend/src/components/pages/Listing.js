@@ -3,16 +3,20 @@ import { Container, Row, Table, Button } from 'reactstrap'
 import parseJwt from '../../helpers/authHelper'
 import { useHistory } from "react-router-dom";
 
-
 const Listings = () => {
     let history = useHistory();
-    const token = sessionStorage.getItem('token')
-    const user = parseJwt(token).username
-    const [listing, setListing] = useState([])
+    const token = sessionStorage.getItem('token');
+    const user = parseJwt(token).email;
+    const [listing, setListing] = useState([]);
     const logout = event => {
         event.preventDefault()
         sessionStorage.removeItem('token')
         history.push("/login")
+    }
+    const signup = event =>{
+        event.preventDefault()
+        // sessionStorage.removeItem('token')
+        history.push("/signup")
     }
     useEffect(() => {
         const getData = async () => {
@@ -46,12 +50,14 @@ const Listings = () => {
                         <tr><td colSpan="4" className="text-center text-white"><i>No listings found</i></td></tr>
                     }
                     {listing.length > 0 &&
-                        listing.map(entry => <tr><td>{entry.id}</td><td>{entry.name}</td><td>{entry.phoneNumber}</td><td>{entry.email}</td></tr>)
+                        listing.map(entry => <tr key={entry.id}><td>{entry.id}</td><td>{entry.name}</td><td>{entry.phoneNumber}</td><td>{entry.email}</td></tr>)
                     }
                 </tbody>
             </Table>
         <Row className="my-5">
             <Button onClick={logout} color="primary">Logout</Button>
+            <Button onClick={signup} color="primary" padding="7px"
+    margin="auto">Sign Up</Button>
         </Row>
         </Container>
     )
